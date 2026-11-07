@@ -1,0 +1,97 @@
+
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#111111">
+<title>FOOTZONE</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;background:#111;color:white;font-family:Arial,sans-serif}
+header{padding:22px 18px;background:#080808;border-bottom:1px solid #333}
+.logo{font-size:27px;font-weight:900;letter-spacing:1px}
+.logo span{color:#aaa}
+header p{color:#999;font-size:13px;margin-bottom:0}
+nav{display:flex;justify-content:space-around;background:#191919;padding:15px 4px;position:sticky;top:0}
+nav button{background:none;border:0;color:#aaa;font-size:13px}
+nav button.active{color:white;font-weight:bold}
+main{padding:18px}
+h2{font-size:21px}
+.hero{background:linear-gradient(135deg,#333,#090909);padding:25px 18px;border-radius:15px;margin:15px 0}
+.hero small{color:#bbb}
+.hero h1{font-size:29px;margin:12px 0}
+.hero p{color:#bbb;font-size:14px}
+.section{margin-top:28px}
+.card{background:#202020;border:1px solid #333;border-radius:12px;padding:16px;margin:12px 0}
+.card h3{margin:8px 0}
+.card p{color:#aaa;font-size:14px}
+.tag{color:#bbb;font-size:12px}
+footer{text-align:center;color:#777;padding:30px;font-size:12px}
+</style>
+</head>
+<body>
+<header>
+<div class="logo">FOOT<span>ZONE</span> ⚽</div>
+<p>THE WORLD OF FOOTBALL</p>
+</header>
+
+<nav>
+<button class="active" onclick="show('home',this)">الرئيسية</button>
+<button onclick="show('news',this)">الأخبار</button>
+<button onclick="show('matches',this)">المباريات</button>
+<button onclick="show('clubs',this)">الأندية</button>
+</nav>
+
+<main id="content">
+<div class="hero">
+<small>WELCOME TO FOOTZONE</small>
+<h1>عالم كرة القدم بين يديك ⚽</h1>
+<p>الأخبار، المباريات، النجوم وكل ما يتعلق بكرة القدم.</p>
+</div>
+
+<div class="section">
+<h2>🔥 اكتشف FOOTZONE</h2>
+<div class="card">
+<div class="tag">📰 NEWS</div>
+<h3>آخر أخبار كرة القدم</h3>
+<p>تابع جديد عالم المستديرة.</p>
+</div>
+<div class="card">
+<div class="tag">🏆 MATCHES</div>
+<h3>المباريات والنتائج</h3>
+<p>كل جديد المباريات والبطولات.</p>
+</div>
+<div class="card">
+<div class="tag">⭐ PLAYERS</div>
+<h3>نجوم كرة القدم</h3>
+<p>اكتشف أفضل اللاعبين والنجوم.</p>
+</div>
+<div class="card">
+<div class="tag">⚽ CLUBS</div>
+<h3>الأندية العالمية</h3>
+<p>تعرف على الفرق والبطولات.</p>
+</div>
+</div>
+</main>
+
+<footer>FOOTZONE © 2026 - ALL RIGHTS RESERVED</footer>
+
+<script>
+function show(page,btn){
+document.querySelectorAll('nav button').forEach(b=>b.classList.remove('active'));
+btn.classList.add('active');
+let titles={
+home:['الرئيسية','مرحبا بك في FOOTZONE ⚽'],
+news:['آخر الأخبار','قريبا: أخبار كرة القدم العالمية'],
+matches:['المباريات','قريبا: جدول المباريات والنتائج'],
+clubs:['الأندية','قريبا: معلومات الأندية العالمية']
+};
+let data=titles[page];
+document.getElementById('content').innerHTML=
+'<div class="hero"><small>FOOTZONE</small><h1>'+data[0]+'</h1><p>'+data[1]+'</p></div><div class="card"><h3>⚽ عالم كرة القدم</h3><p>نعمل على تطوير هذا القسم لإضافة المزيد من المعلومات.</p></div>';
+}
+</script>
+</body>
+</html>
+  
